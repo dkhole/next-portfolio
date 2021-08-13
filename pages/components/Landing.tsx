@@ -1,4 +1,4 @@
-import { css } from '@emotion/css';
+import { cx, css } from '@emotion/css';
 import Face from './Face';
 import Github from '../../public/svgs/github.svg';
 import Light from '../../public/svgs/light.svg';
@@ -14,21 +14,32 @@ export default function Landing(props: any) {
             justify-content: center;
             align-items: center;
         `}>
-            <Light onClick={() => { props.isNight ? props.setNight(false) : props.setNight(true)}} className={css`
-                position: fixed;
-                top: 10px;
-                right: 10px;
-                height: 45px;
-                width: 45px;
-                cursor: pointer;
-                path:first-child {
-                    fill: orange;
-                }    
-                path:last-child {
-                    fill: grey;
-                }                    
-            `}/>
-            <h1 className={props.headingStyle}>Daniel J
+            <Light onClick={() => { props.isNight ? props.setNight(false) : props.setNight(true)}} className={css([
+                {
+                    position: 'fixed',
+                    top: '10px',
+                    right: '10px',
+                    height: '45px',
+                    width: '45px',
+                    cursor: 'pointer',
+                    'path:first-child': {
+                        fill: 'orange'
+                    },
+                    'path:last-child': {
+                        fill: 'grey'
+                    }
+                },
+                !props.isNight && {
+                    'path:first-child': {
+                        fill: 'white'
+                    }
+                }
+            ])}/>
+            <h1 className={cx(props.headingStyle, css([
+                !props.isNight && {
+                    color: 'black',
+                }
+            ]))}>Daniel J
                 <span className={css`
                     color: orange
                 `}>
@@ -53,7 +64,7 @@ export default function Landing(props: any) {
                     background-color: #ffc355;
                 }
             `}>Projects</button>
-            <Face />
+            <Face isNight={props.isNight}/>
             <a title="link to github page" className={css`
                 cursor: pointer;
                 &:hover {

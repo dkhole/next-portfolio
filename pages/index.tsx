@@ -24,12 +24,19 @@ export default function Index() {
     }
   `
 
-  const headingStyle = css`
-    font-family: RubikBold;
-    letter-spacing: -0.05em;
-    font-size: 52px;
-    color: white;
-  `
+  const mediaQ: string = '@media (min-width: 900px)';
+  const headingStyle: string = css([
+    {
+      fontFamily: 'RubikBold',
+      letterSpacing: '-0.05em',
+      fontSize: '52px',
+      color: 'white'
+    },
+    !isNight && {
+      color: 'black'
+    }
+  ]);
+  
 
   return (
     <div className={css([
@@ -40,8 +47,8 @@ export default function Index() {
         backgroundColor: 'white'
       }
     ])}>
-      <Landing headingStyle={headingStyle} isNight={isNight} setNight={setNight}/>
-      <Projects headingStyle={headingStyle} isNight={isNight} setNight={setNight}/>
+      <Landing headingStyle={headingStyle} isNight={isNight} setNight={setNight} mediaQ={mediaQ}/>
+      <Projects headingStyle={headingStyle} isNight={isNight} mediaQ={mediaQ}/>
     </div>
   )
 }

@@ -46,26 +46,42 @@ export default function Project(props: any) {
       }, []);
 
     return (
-        <div className={css`
-            border: 1px solid black;
-            display: flex;
-            flex-direction: column;
-            height: auto;
-            width: calc(80% - 40px);
-            border-radius: 30px;
-            padding: 0 40px;
-            padding-bottom: 40px;
-            background-color: white;
-            box-shadow: -7px 5px 4px 3px rgba(0, 0, 0, 1);
-            text-align: center;
-            margin: 40px 0;
-    `}>
-        <div>
+        <div className={css(
+        {
+            border: '1px solid black',
+            display: 'flex',
+            flexDirection: 'column',
+            height: 'auto',
+            width: 'calc(80% - 40px)',
+            borderRadius: '30px',
+            padding: '0 40px',
+            paddingBottom: '40px',
+            backgroundColor: 'white',
+            boxShadow: '-7px 5px 4px 3px rgba(0, 0, 0, 1)',
+            textAlign: 'center',
+            margin: '40px 0',
+            [props.mediaQ]: {
+                width: '900px',
+                flexDirection: 'row',
+            }
+        },
+        !props.isNight && {
+            border: 'none',
+            boxShadow: '-7px 5px 4px 3px rgba(0, 0, 0, 0.1)',
+        }
+    )}>
+        <div className={css(
+            {
+                [props.mediaQ]: {
+                    width: '50%'
+                }
+            }
+        )}>
             <h2 className={cx(props.headingStyle, css`
-            font-size: 35px;
-            color: black;
-            letter-spacing: 0;
-            margin-bottom: 15px;
+                font-size: 35px;
+                color: black;
+                letter-spacing: 0;
+                margin-bottom: 15px;
             `)}> {props.title}</h2>
             <div className={css`
                 display: flex;
@@ -75,6 +91,12 @@ export default function Project(props: any) {
                     width: 30px;
                     margin: 5px;
                     margin-bottom: 15px;
+                    transition: all 0.25s;
+                }
+                svg:hover {
+                    height: 35px;
+                    width: 35px;
+                    margin-bottom: 10px;
                 }
             `}>
                {icons.length > 0 ? icons.map((icon: any) => icon) : false}
@@ -88,10 +110,26 @@ export default function Project(props: any) {
                 {props.description}
             </div>
         </div>
-        <div>
+        <div className={css(
+            {
+                [props.mediaQ]: {
+                    width: '50%',
+                    paddingTop: '40px',
+                    paddingLeft: '40px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexDirection: 'column'
+                }
+            }
+        )}>
             <div className={css`
                 border: 1px solid black;
                 height: 300px;
+                ${props.mediaQ} {
+                    height: 200px;
+                    width: 350px;
+                }
             `}></div>
             <div className={css`
                 display: flex;
@@ -106,6 +144,9 @@ export default function Project(props: any) {
                     justify-content: center;
                     cursor: pointer;
                     padding: 5px;
+                }
+                ${props.mediaQ} {
+                    width: 80%;
                 }
             `}>
                 <a href={props.liveLink} title="link to live preview" className={css`
