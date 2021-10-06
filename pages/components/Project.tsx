@@ -165,7 +165,7 @@ export default function Project(props: any) {
 				>
 					<a
 						href={props.liveLink}
-						title="link to live preview"
+						title="link to live preview if available"
 						className={css`
 							background-color: orange;
 							&:hover {
