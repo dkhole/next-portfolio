@@ -1,23 +1,72 @@
-import { cx, css } from '@emotion/css';
-import Project from './Project';
+import { cx, css } from "@emotion/css";
+import Project from "./Project";
+import physioImg from "../../public/imgs/physio.gif";
+import Image from "next/image";
+import cliImg from "../../public/imgs/cli.gif";
 
 export default function Projects(props: any) {
-    return (
-        <div className={css`
-            text-align: center;
-        `}>
-            <h1 className={cx(props.headingStyle, css
-                `
-                    margin-bottom: 20px
-                `)}>Projects</h1>
-            <div className={css`
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-            `}>
-                <Project mediaQ={props.mediaQ} isNight={props.isNight} title="Physiotherapy Landing Site" headingStyle={props.headingStyle} liveLink="https://www.google.com" icons={['html', 'css', 'react', 'gatsby', 'netlify']} description="Mobile-first design using Figma to prototype and developed using Gatsby.js to optimize images and improve SEO. Fully fit with Netlify CMS giving client the freedom to customize content. Hosted on netlify. I will probably stick to next js for future projects as it feels cleaner than Gatsby's plugin ecosystem"/>
-                <Project mediaQ={props.mediaQ} isNight={props.isNight} title="Web Scraper" headingStyle={props.headingStyle} liveLink="https://www.google.com" icons={['html', 'css', 'node']} description="Command line tool to scrape a website, extract the data to .csv and email to user. Also worked on an automated messaging tool for the same start-up. Wrote documentation intended for non-technical users: https://bit.ly/3uP2Z1s"/>
-            </div>
-        </div>
-    )
+	return (
+		<div
+			className={css`
+				text-align: center;
+			`}
+		>
+			<h1
+				className={cx(
+					props.headingStyle,
+					css`
+						margin-bottom: 20px;
+					`
+				)}
+			>
+				Projects
+			</h1>
+			<div
+				className={css`
+					display: flex;
+					align-items: center;
+					flex-direction: column;
+				`}
+			>
+				<Project
+					mediaQ={props.mediaQ}
+					isNight={props.isNight}
+					title="Physiotherapy Business Website"
+					headingStyle={props.headingStyle}
+					liveLink="https://www.google.com"
+					icons={["html", "css", "react", "gatsby", "netlify"]}
+					image={<Image src={physioImg} alt="Preview of project" layout="fill" objectFit="contain" />}
+					description="Initially designed using Figma and then developed mobile-first using Gatsby.js. Client wanted control over the content but not the styling so i chose to use Netlify CMS for ease of setup. This project was started a while ago when Gatsby was known to be better for SEO but if i was to do it again i would choose Nextjs."
+				/>
+				<Project
+					mediaQ={props.mediaQ}
+					isNight={props.isNight}
+					title="Web Scraper/Puppeteer CLI Tools"
+					headingStyle={props.headingStyle}
+					liveLink="https://www.google.com"
+					icons={["html", "css", "node"]}
+					image={<Image src={cliImg} alt="Preview of project" layout="fill" objectFit="contain" />}
+					description="Client wanted a way to scrape data from gumtree to analyse trends in the furniture category so i created this webscraper using node js to scrape and email data in a csv format to the client. Good experiece having to work with and document for non-technical users: https://bit.ly/3uP2Z1s. The Puppeteer tool was a way to programatically login to gumtree and send messages to selected users a similar version to this is available on my github under auto-msg."
+				/>
+				<Project
+					mediaQ={props.mediaQ}
+					isNight={props.isNight}
+					title="E-Commerce"
+					headingStyle={props.headingStyle}
+					liveLink="https://www.google.com"
+					icons={["html", "css", "react", "next", "ts"]}
+					description="Currently building an online store for a client using Nextjs with TS for the front-end, emotion css for css-in-JS and shopify for the backend. After considering my options I realised this was the most flexible stack that was both cheap, not too labour intensive and provided my client with full backend capabilities such as product management. Coded most of the logic but need to wait for client to provide designs before i start implementing styling properly. Was using typescript previously but fell in love with it after this project."
+				/>
+				<Project
+					mediaQ={props.mediaQ}
+					isNight={props.isNight}
+					title="Portfolio"
+					headingStyle={props.headingStyle}
+					liveLink="https://www.google.com"
+					icons={["html", "css", "react", "next", "ts"]}
+					description="This was my first time using Emotion-CSS and I had trouble installing it and ended up using the core library. Since then i've been using react/emotion for subsequent nextjs projects. Working on a migration to a site built with threejs"
+				/>
+			</div>
+		</div>
+	);
 }
