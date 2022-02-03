@@ -1,5 +1,6 @@
 import cli from "./cli.gif";
-import ecomm from "./ecomm.gif";
+import games from "./games.gif";
 import physio from "./physio.gif";
+import noname from "./noname.gif";
 
-export { cli, ecomm, physio };
+export { cli, games, physio, noname };

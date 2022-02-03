@@ -1,6 +1,6 @@
 import { cx, css } from "@emotion/css";
 import { useState, useEffect } from "react";
-import { CssIcon, ExpressIcon, GatsbyIcon, HerokuIcon, HtmlIcon, NetlifyIcon, NodejsIcon, PostgresIcon, ReactIcon, TsIcon, Live, Github, Next } from "../../public/svgs";
+import { CssIcon, ExpressIcon, GatsbyIcon, HerokuIcon, HtmlIcon, NetlifyIcon, NodejsIcon, PostgresIcon, ReactIcon, TsIcon, Live, Github, Next, Godot, Unity, Shopify } from "../../public/svgs";
 
 export default function Project(props: any) {
 	const [icons, setIcons]: any = useState([]);
@@ -32,6 +32,12 @@ export default function Project(props: any) {
 						return <NodejsIcon key={9} />;
 					case "next":
 						return <Next key={10} />;
+					case "godot":
+						return <Godot key={11} />;
+					case "unity":
+						return <Unity key={12} />;
+					case "shopify":
+						return <Shopify key={13} />;
 					default:
 						return;
 				}

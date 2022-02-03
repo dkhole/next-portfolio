@@ -11,5 +11,8 @@ import TsIcon from "./typescript.svg";
 import Live from "./livePreview.svg";
 import Github from "./github.svg";
 import Next from "./next.svg";
+import Godot from "./godot.svg";
+import Unity from "./unity.svg";
+import Shopify from "./shopify-logo.svg";
 
-export { CssIcon, ExpressIcon, GatsbyIcon, HerokuIcon, HtmlIcon, NetlifyIcon, NodejsIcon, PostgresIcon, ReactIcon, TsIcon, Live, Github, Next };
+export { CssIcon, ExpressIcon, GatsbyIcon, HerokuIcon, HtmlIcon, NetlifyIcon, NodejsIcon, PostgresIcon, ReactIcon, TsIcon, Live, Github, Next, Godot, Unity, Shopify };

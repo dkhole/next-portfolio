@@ -1,6 +1,6 @@
 import { cx, css } from "@emotion/css";
 import Project from "./Project";
-import { cli, ecomm, physio } from "../../public/imgs";
+import { cli, games, noname, physio } from "../../public/imgs";
 import Image from "next/image";
 
 export default function Projects(props: any) {
@@ -31,13 +31,12 @@ export default function Projects(props: any) {
 					<Project
 						mediaQ={props.mediaQ}
 						isNight={props.isNight}
-						title="Physiotherapy Business Website"
+						title="E-Commerce"
 						headingStyle={props.headingStyle}
-						liveLink="https://www.movement-mechanics.com.au/"
-						gitLink="https://github.com/dkhole/physio-cms.git"
-						icons={["html", "css", "react", "gatsby", "netlify"]}
-						image={<Image src={physio} alt="Preview of project" layout="fill" objectFit="contain" />}
-						description="Initially designed using Figma and then developed mobile-first using Gatsby.js. Client wanted control over the content but not the styling so i chose to use Netlify CMS for ease of setup. This project was started a while ago when Gatsby was known to be better for SEO but if i was to do it again i would choose Nextjs."
+						gitLink="https://github.com/dkhole/noname-ts.git"
+						icons={["html", "css", "react", "next", "ts"]}
+						image={<Image src={noname} alt="Preview of project" layout="fill" objectFit="contain" />}
+						description="Currently building an online store for a client using Nextjs with TS for the front-end, emotion css for css-in-JS and shopify for the backend. After considering my options I realised this was the most flexible stack that was both cheap, not too labour intensive and provided my client with full backend capabilities such as product management. Core website is complete but still waiting on the client to provide a few more pages and a domain name. Was using typescript previously but fell in love with it after this project."
 					/>
 					<Project
 						mediaQ={props.mediaQ}
@@ -52,21 +51,23 @@ export default function Projects(props: any) {
 					<Project
 						mediaQ={props.mediaQ}
 						isNight={props.isNight}
-						title="E-Commerce"
+						title="Physiotherapy Business Website"
 						headingStyle={props.headingStyle}
-						gitLink="https://github.com/dkhole/noname-ts.git"
-						icons={["html", "css", "react", "next", "ts"]}
-						image={<Image src={ecomm} alt="Preview of project" layout="fill" objectFit="contain" />}
-						description="Currently building an online store for a client using Nextjs with TS for the front-end, emotion css for css-in-JS and shopify for the backend. After considering my options I realised this was the most flexible stack that was both cheap, not too labour intensive and provided my client with full backend capabilities such as product management. Coded most of the logic but need to wait for client to provide designs before i start implementing styling properly. Was using typescript previously but fell in love with it after this project."
+						liveLink="https://www.movement-mechanics.com.au/"
+						gitLink="https://github.com/dkhole/physio-cms.git"
+						icons={["html", "css", "react", "gatsby", "netlify"]}
+						image={<Image src={physio} alt="Preview of project" layout="fill" objectFit="contain" />}
+						description="Initially designed using Figma and then developed mobile-first using Gatsby.js. Client wanted control over the content but not the styling so i chose to use Netlify CMS for ease of setup. This project was started a while ago when Gatsby was known to be better for SEO but if i was to do it again i would choose Nextjs."
 					/>
 					<Project
 						mediaQ={props.mediaQ}
 						isNight={props.isNight}
-						title="Portfolio"
+						title="Game Development"
 						headingStyle={props.headingStyle}
 						gitLink="https://github.com/dkhole/next-portfolio.git"
-						icons={["html", "css", "react", "next", "ts"]}
-						description="This was my first time using Emotion-CSS and I had trouble installing it and ended up using the core library. Since then i've been using react/emotion for subsequent nextjs projects. Currently Working on a migration to a site built with threejs which is why i have stopped fine tuning this portfolio."
+						icons={[]}
+						image={<Image src={games} alt="Preview of project" layout="fill" objectFit="contain" />}
+						description="I like to dabble in game development during my free time. I currently use Unity for 3D and Godot for 2D but want to transition away from Unity to Unreal. Game development has been a real driving force behind my learning as it’s helped me get comfortable with more advanced topics giving me the confidence and practice when dealing with more difficult problems."
 					/>
 				</div>
 			</div>
