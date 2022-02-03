@@ -33,7 +33,7 @@ export default function Projects(props: any) {
 						isNight={props.isNight}
 						title="E-Commerce"
 						headingStyle={props.headingStyle}
-						gitLink="https://github.com/dkhole/noname-ts.git"
+						gitLink="https://github.com/dkhole/noname"
 						icons={["html", "css", "react", "next", "ts"]}
 						image={<Image src={noname} alt="Preview of project" layout="fill" objectFit="contain" />}
 						description="Currently building an online store for a client using Nextjs with TS for the front-end, emotion css for css-in-JS and shopify for the backend. After considering my options I realised this was the most flexible stack that was both cheap, not too labour intensive and provided my client with full backend capabilities such as product management. Core website is complete but still waiting on the client to provide a few more pages and a domain name. Was using typescript previously but fell in love with it after this project."
@@ -64,7 +64,7 @@ export default function Projects(props: any) {
 						isNight={props.isNight}
 						title="Game Development"
 						headingStyle={props.headingStyle}
-						gitLink="https://github.com/dkhole/next-portfolio.git"
+						gitLink="https://github.com/dkhole/pixel"
 						icons={[]}
 						image={<Image src={games} alt="Preview of project" layout="fill" objectFit="contain" />}
 						description="I like to dabble in game development during my free time. I currently use Unity for 3D and Godot for 2D but want to transition away from Unity to Unreal. Game development has been a real driving force behind my learning as it’s helped me get comfortable with more advanced topics giving me the confidence and practice when dealing with more difficult problems."
